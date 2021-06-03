@@ -30,27 +30,26 @@ PM_START_TEXT = """
 *┗┓| MIGHTY HELPER GROUP | ┏┛*
 
 _Hallo_ *{}* 🙋‍♂
-Nama saya adalah *{}*\nBot Pro Telegram yang Kuat untuk Mengelola Grup Anda, jangan ragu untuk menambahkan ke grup Anda !!
+My name is *{}*\nPowerful Telegram Pro Bot to Manage your Group, feel free to add to your group!!
 ━━━━━━━━━━━━━━━━━━━━
-_Dikelola Oleh_ [Yunus Zend](Https://t.me/ZendYNS) 💻
+_Managed By_ [Achu biju](https://t.me/Yeageristbotsdev)
 
-࿇Tambahkan saya ke group mu dan jadikan saya *admin!!* 🧑‍💻
+Add me to your group and make me *admin!!*
 
-࿇Klik /help 💁‍♂ untuk melihat fitur fitur yang bisa kamu gunakan untuk membantu kinerja grup kamu.
+Click /help to see the features that you can use to help your group's performance.
 """
 
 
 HELP_STRINGS = """
-Hei kamu yg disana! Nama saya adalah *{}*.
-Saya bot manajemen grup modular dengan beberapa tambahan yang menyenangkan! Lihatlah yang berikut ini untuk mendapatkan gambaran tentang beberapa hal yang dapat saya bantu.
-
+Hey you over there! My name is *{}*.
+I'm a modular group management bot with some fun additions! Take a look at the following to get an idea of ​​some of the things I can help with.
 *Perintah utama* tersedia!!:
- ࿇ /start: Mulai bot ini
- ࿇ /help: PM Anda pesan ini.
- ࿇ /help <module name>: PM info Anda tentang modul itu.
+ ࿇ /start:Start bot 
+ ࿇ /help: PM support.
+ ࿇ /help <module name>: PM info.
  ࿇ /settings:
-   ☞  ✐ Di PM: akan mengirimkan pengaturan Anda untuk semua modul yang didukung.
-   ☞  ✐ Di dalam Group: akan mengarahkan Anda ke pm, dengan semua pengaturan obrolan itu.
+   ☞  ✐ In PM: will send your settings for all supported modules.
+   In Group: will redirect you to pm, with all those chat settings.
 {}
 Dan berikut Command-Command yg dapat digunakan dalam grup:
 """.format(dispatcher.bot.first_name, "" if not ALLOW_EXCL else "\nSemua perintah bisa digunakan dengan / atau!.\n")
@@ -63,10 +62,6 @@ def vercheck() -> str:
     return str(VERSION)
 
 
-SOURCE_STRING = """
-⚡Bot ini bisa memutar musik di VCG GROUP atau panggilan suara grup Anda [Klik Disini](Https://t.me/MightyMusic_bot)
-⚡Kamu bisa menggunakan saya [klik Disini](Https://t.me/MightyMusic_bot)
-"""
 
 
 IMPORTED = {}
@@ -84,7 +79,7 @@ GDPR = []
 
 START_IMG = os.environ.get('START_IMG', None)
 if START_IMG is None:
-    img = "https://telegra.ph/file/58476a0d75fc70547fb1d.jpg"
+    img = "https://telegra.ph/file/a840b1b76035646acdb3b.jpg"
 else:
   img = START_IMG    
     
@@ -170,7 +165,7 @@ def start(bot: Bot, update: Update, args: List[str]):
         else:
             send_start(bot, update)
     else:
-        update.effective_message.reply_text("Hallo,{} Disini..\nBagaimana saya bisa membantu anda? 🙂".format(bot.first_name),reply_markup=InlineKeyboardMarkup(
+        update.effective_message.reply_text("Hello,{} Here..\nHow can I help you?🙂".format(bot.first_name),reply_markup=InlineKeyboardMarkup(
                                                 [[InlineKeyboardButton(text="🔉 Help",url="t.me/{}?start=help".format(bot.username))]]))
 
 def send_start(bot, update):
@@ -185,8 +180,8 @@ def send_start(bot, update):
     first_name = update.effective_user.first_name 
     text = PM_START_TEXT
 
-    keyboard = [[InlineKeyboardButton(text="🔉 Help",callback_data="help_back"),InlineKeyboardButton(text="💻 Creator 💻",url="https://t.me/ZendYNS")]]
-    keyboard += [[InlineKeyboardButton(text="💭 Group Support",url="Https://t.me/KingUserbotSupport"),InlineKeyboardButton(text="➕ Tambah Saya ➕",url="t.me/{}?startgroup=true".format(bot.username))]]
+    keyboard = [[InlineKeyboardButton(text="🔉 Help",callback_data="help_back"),InlineKeyboardButton(text="💻 Update 💻",url="hhttps://t.me/MioAkiyamaupdate")]]
+    keyboard += [[InlineKeyboardButton(text="💭 Group Support",url="https://t.me/Yeageristbots"),InlineKeyboardButton(text="➕ Add me ➕",url="t.me/{}?startgroup=true".format(bot.username))]]
 
     update.effective_message.reply_photo(img, PM_START_TEXT.format(escape_markdown(first_name), escape_markdown(bot.first_name), OWNER_NAME, OWNER_ID), 
                                          reply_markup=InlineKeyboardMarkup(keyboard), disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
@@ -287,7 +282,7 @@ def get_help(bot: Bot, update: Update):
         update.effective_message.reply_text("Contact me in PM to get the list of possible commands.",
                                             reply_markup=InlineKeyboardMarkup(
                                                 [[InlineKeyboardButton(text="🔉 Help",url="t.me/{}?start=help".format(bot.username))],  
-                                                [InlineKeyboardButton(text="🛡 Contact Creator",url="https://t.me/ZendYNS")]]))
+                                                [InlineKeyboardButton(text="🛡 Update channel",url="https://t.me/MioAkiyamaupdate")]]))
         return
 
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
