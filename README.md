@@ -19,7 +19,7 @@
 
 ### <h3 align="center">DEPLOY KE HEROKU</h3>
 
-<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Yunus-ZEND/MightyWarriorBot"> <img src="https://img.shields.io/badge/Click%20Untuk%20Deploy-green?style=flat&logo=heroku" width="200" height="32.45" /></a></p>
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Achu2234/MightyWarriorBot"> <img src="https://img.shields.io/badge/Click%20Untuk%20Deploy-green?style=flat&logo=heroku" width="200" height="32.45" /></a></p>
 
 #### class Development(Config):
    - `OWNER_ID` = 1118936839  # my telegram ID
